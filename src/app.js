@@ -25,5 +25,18 @@ app.use(express.static("public"));
 //to access and set (CRED operation) the browser's cookies from the server
 app.use(cookieParser());
 
- 
-export default app;
+
+//import routes
+
+import userRouter from './routes/user.routes.js';
+
+
+//routes declaration
+//Since we are not declaring routes in the same file, we are fetching it from another directoty
+//So we will have to use it as a middleware. Hence we are using the .use() method instead of the .get() method.
+app.use("/api/v1/users", userRouter);
+
+//http://localhost:8000/api/v1/users/... as /users is reached it passes the control to userRouter.
+
+
+export {app};
