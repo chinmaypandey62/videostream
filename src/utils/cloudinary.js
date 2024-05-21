@@ -9,7 +9,7 @@ cloudinary.config({
 });
 
 
-const uploadOnCloudinary = async function(localFilePath) {
+export const uploadOnCloudinary = async function(localFilePath) {
     try {
         if(!localFilePath) {
             console.log(`Could not get file path...`);
